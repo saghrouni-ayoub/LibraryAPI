@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibraryAPI</name>
+    </assembly>
+    <members>
+        <member name="M:LibraryAPI.Controllers.AuthorsController.GetAuthor(System.Guid)">
+            <summary>
+            Get an author by his/her id
+            </summary>
+            <param name="authorId">The id of the author you want to get</param>
+            <returns>An ActionResult of type Author</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.AuthorsController.UpdateAuthor(System.Guid,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{LibraryAPI.Models.AuthorForUpdate})">
+            <summary>
+            Partially update an author
+            </summary>
+            <param name="authorId">The id of the author you want to get</param>
+            <param name="patchDocument">The set of operations to apply to the author</param>
+            <returns>An ActionResult of type Author</returns>
+            <remarks>
+            Sample request (this request updates the author's first name) \ 
+            PATCH /authors/id \
+            [ \
+                { \
+                  "op": "replace", \
+                  "path": "/firstname", \
+                  "value": "new first name" \
+                  } \
+            ] \
+            </remarks>
+        </member>
+    </members>
+</doc>
